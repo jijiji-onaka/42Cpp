@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 21:23:06 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/10 17:30:45 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/06/10 20:27:34 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 
 # include <string>
 # include <iostream>
-
-// : first name, last name, nickname,
-// login, postal address, email address, phone number, birthday date, favorite
-// meal, underwear color and darkest secret.
 
 class Contact {
 

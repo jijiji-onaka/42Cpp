@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 18:29:50 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/10 18:08:59 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/06/10 21:16:12 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,8 @@ int	main(void)
 	contact_count = 0;
 	while (42)
 	{
-	puts("11");
 		input_command(&command);
 		check_command(command, contact, contact_count);
-		std::cout << "ans -> [" << (int)command[0] << "]" << std::endl;
 	}
-	puts("12");
 	return (0);
 }
