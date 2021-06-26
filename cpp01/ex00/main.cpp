@@ -5,42 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/10 21:13:12 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/13 00:15:19 by tjinichi         ###   ########.fr       */
+/*   Created: 2021/06/11 01:32:06 by tjinichi          #+#    #+#             */
+/*   Updated: 2021/06/27 02:10:29 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
+# include "Zombie.hpp"
 
-static void	ponyOnTheHeap(void)
+int	main(void)
 {
-	Pony	*heap_pony;
-	try
-	{
-		heap_pony = new Pony("Heeeeeeep", 53);
-	}
-	catch(std::bad_alloc e)
-	{
-		std::cerr << "ponyOnTheHeap: " << e.what() << std::endl;
-		exit(EXIT_FAILURE);
-	}
-	heap_pony->whinny();
-	delete heap_pony;
-}
+	std::srand(std::time(NULL));
 
-static void	ponyOnTheStack(void)
-{
-	Pony	stack_pony("Staaaaack", 31);
+	std::cout << GREEN""BOLD"Zombie"RESET << std::endl;
 
-	stack_pony.whinny();
-}
+	Zombie	*zombie = newZombie("Zombie");
+	zombie->announce();
+	delete zombie;
 
-int	main()
-{
-	std::cout << GREEN""BOLD"    Heap    "RESET << std::endl;
-	ponyOnTheHeap();
 	std::cout << std::endl;
-	std::cout << GREEN""BOLD"    Stack    "RESET << std::endl;
-	ponyOnTheStack();
-	return (0);
+
+	std::cout <<  GREEN""BOLD"Random Zombie"RESET << std::endl;
+	std::string	names[] = {"Doraemon", "Noby", "Sue", "Sneech", "Big G", "Ace Goody"};
+	for (int i = 0; i < 10; ++i)
+		randomChump(names[std::rand() % 5]);
 }

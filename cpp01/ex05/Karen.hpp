@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/12 22:32:19 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/13 15:36:30 by tjinichi         ###   ########.fr       */
+/*   Created: 2021/06/27 04:00:31 by tjinichi          #+#    #+#             */
+/*   Updated: 2021/06/27 04:18:29 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_CPP
-# define HUMANB_CPP
+#ifndef KAREN_HPP
+# define KAREN_HPP
 
-# include "Weapon.hpp"
+# include <iostream>
 
 # define YELLOW "\033[33m"
 # define RED "\033[38;5;196m"
-# define ORANGE "\033[38;5;202m"
 # define GREEN "\033[38;5;34m"
 # define PURPLE "\033[38;5;105m"
 # define DULL_GREEN "\033[38;5;58m"
 # define BOLD "\033[1m"
 # define RESET "\033[0m"
 
-class HumanB
+class Karen
 {
 	private:
-		std::string	name_;
-		Weapon		*weapon_;
+		void	debug(void);
+		void	info(void);
+		void	warning(void);
+		void	error(void);
 	public:
-		HumanB(const char *name);
-		void		setWeapon(Weapon &weapon);
-		void		attack(void);
+		void	complain(std::string level);
+		Karen(void);
+		~Karen(void);
 };
 
 #endif

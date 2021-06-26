@@ -6,7 +6,7 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/06/11 02:41:26 by tjinichi         ###   ########.fr        #
+#    Updated: 2021/06/27 02:09:35 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ CXXFLAGS = -g -Wall -Werror -Wextra -std=c++98
 
 SRCS =	main.cpp \
 		Zombie.cpp \
-		ZombieEvent.cpp \
+		newZombie.cpp \
+		randomChump.cpp \
 
 OBJS = ${SRCS:.cpp=.o}
 

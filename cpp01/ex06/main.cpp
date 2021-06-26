@@ -5,30 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/12 21:34:30 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/13 15:35:28 by tjinichi         ###   ########.fr       */
+/*   Created: 2021/06/27 04:21:22 by tjinichi          #+#    #+#             */
+/*   Updated: 2021/06/27 05:42:33 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Weapon.hpp"
-# include "HumanA.hpp"
-# include "HumanB.hpp"
+#include "Karen.hpp"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
+	Karen	karen;
+	int		check;
+
+	if (argc != 2)
 	{
-		Weapon club = Weapon("crude spiked club");
-		HumanA bob("Bob", club);
-		bob.attack();
-		club.setType("some other type of club");
-		bob.attack();
+		std::cerr << RED"ERROR"RESET": wrong argument" << std::endl;
+		return (EXIT_FAILURE);
 	}
+
+	std::string	arg = argv[1];
+	std::string	levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	check = 5;
+	if (arg == "ERROR")
+		check = 3;
+	else if (arg == "WARNING")
+		check = 2;
+	else if (arg == "INFO")
+		check = 1;
+	else if (arg == "DEBUG")
+		check = 0;
+
+	if (check == 5)
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+
+	for (int i = check; i < 4; ++i)
 	{
-		Weapon club = Weapon("crude spiked club");
-		HumanB jim("Jim");
-		jim.setWeapon(club);
-		jim.attack();
-		club.setType("some other type of club");
-		jim.attack();
+		std::cout << "[ " << levels[i] << " ]" << std::endl;
+		karen.complain(levels[i]);
 	}
 }

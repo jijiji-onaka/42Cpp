@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Human.hpp                                          :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/11 14:14:20 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/12 19:27:06 by tjinichi         ###   ########.fr       */
+/*   Created: 2021/06/12 21:12:49 by tjinichi          #+#    #+#             */
+/*   Updated: 2021/06/27 03:43:20 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMAN_HPP
-# define HUMAN_HPP
+#include "Weapon.hpp"
 
-# include <iostream>
-# include "Brain.hpp"
-
-class Human
+Weapon::Weapon(std::string type)
 {
-	private:
-		Brain	brain;
-	public:
-		std::string	identify(void);
-		Brain		&getBrain(void);
-};
+	this->type_ = type;
+}
 
-#endif
+const std::string	&Weapon::getType(void)
+{
+	return (this->type_);
+}
+
+void	Weapon::setType(const char *type)
+{
+	this->type_ = type;
+}

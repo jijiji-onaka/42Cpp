@@ -5,67 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/11 01:32:06 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/13 00:15:39 by tjinichi         ###   ########.fr       */
+/*   Created: 2021/06/11 12:44:26 by tjinichi          #+#    #+#             */
+/*   Updated: 2021/06/27 03:34:04 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ZombieEvent.hpp"
-
-void	randomChump(void)
-{
-	std::string	names[] = {"Doraemon", "Noby", "Sue", "Sneech", "Big G", "Ace Goody"};
-	std::string	types[] = {"Cat-shaped robot", "hero", "Heroine", "Mean", "Rowdy", "Smart"};
-	Zombie		*randam_zombie;
-
-	try
-	{
-		randam_zombie = new Zombie(names[std::rand() % 5], types[std::rand() % 5]);
-	}
-	catch(std::bad_alloc e)
-	{
-		std::cerr << "randomChump: " << e.what() << std::endl;
-		std::exit(EXIT_FAILURE);
-	}
-	randam_zombie->announce();
-	delete randam_zombie;
-}
+#include <iostream>
+# define YELLOW "\033[33m"
+# define RED "\033[38;5;196m"
+# define GREEN "\033[38;5;34m"
+# define PURPLE "\033[38;5;105m"
+# define DULL_GREEN "\033[38;5;58m"
+# define BOLD "\033[1m"
+# define RESET "\033[0m"
 
 int	main(void)
 {
-	std::srand(std::time(NULL));
+	std::string	original_str = "HI THIS IS BRAIN";
 
-	std::cout << GREEN""BOLD"Stack Zombie"RESET << std::endl;
-	Zombie	stack_zombie("Stack Zombie", "Easy");
-	stack_zombie.announce();
+	std::string	*stringPTR = &original_str;
+
+	std::string	&stringREF = original_str;
+
+	std::cout << GREEN""BOLD"Original String address"RESET << std::endl;
+	std::cout << &original_str << std::endl << std::endl;
+	std::cout << GREEN""BOLD"Pointer String address"RESET << std::endl;
+	std::cout << std::hex << stringPTR << std::endl << std::endl;
+	std::cout << GREEN""BOLD"Reference String address"RESET << std::endl;
+	std::cout << std::hex << &stringREF << std::endl;
+
 	std::cout << std::endl;
 
-
-	std::cout << GREEN""BOLD"Heap Zombie"RESET << std::endl;
-	Zombie	*heap_zombie;
-	try
-	{
-		heap_zombie = new Zombie("Heap Zombie", "Convenient");
-	}
-	catch(std::bad_alloc e)
-	{
-		std::cerr << "main: " << e.what() << std::endl;
-		std::exit(EXIT_FAILURE);
-	}
-	heap_zombie->announce();
-	delete heap_zombie;
-	std::cout << std::endl;
-
-	std::cout <<  GREEN""BOLD"Random Zombie"RESET << std::endl;
-	for (int i = 0; i < 10; ++i)
-		randomChump();
-	std::cout << std::endl;
-
-	std::cout << GREEN""BOLD"Zombie Event Zombie"RESET << std::endl;
-	ZombieEvent event_zombie;
-	event_zombie.setZombieType("Event");
-	Zombie *heap_event_zombie = event_zombie.newZombie("Event Zombie");
-	heap_event_zombie->announce();
-	delete heap_event_zombie;
-	std::cout << std::endl;
+	std::cout << GREEN""BOLD"Pointer String"RESET << std::endl;
+	std::cout << *stringPTR << std::endl << std::endl;
+	std::cout << GREEN""BOLD"Reference String"RESET << std::endl;
+	std::cout << stringREF << std::endl;
 }

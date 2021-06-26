@@ -6,16 +6,17 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/06/11 12:52:31 by tjinichi         ###   ########.fr        #
+#    Updated: 2021/06/27 04:24:17 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ref
+NAME = Karen
 
 CXX = clang++
 CXXFLAGS = -g -Wall -Werror -Wextra -std=c++98
 
-SRCS =	ex04.cpp \
+SRCS =	main.cpp \
+		Karen.cpp \
 
 OBJS = ${SRCS:.cpp=.o}
 

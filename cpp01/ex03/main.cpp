@@ -5,20 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/11 12:14:36 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/11 12:22:29 by tjinichi         ###   ########.fr       */
+/*   Created: 2021/06/12 21:34:30 by tjinichi          #+#    #+#             */
+/*   Updated: 2021/06/27 03:48:10 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieHorde.hpp"
+# include "Weapon.hpp"
+# include "HumanA.hpp"
+# include "HumanB.hpp"
 
-int	main(void)
+int main()
 {
-	std::srand(std::time(NULL));
-
-	int	rand_num = std::rand() % 10;
-	std:: cout << GREEN""BOLD"int N = "<< rand_num << RESET << std::endl;
-	ZombieHorde Zombie_Horde(rand_num);
-	Zombie_Horde.announce();
-	return (0);
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.attack();
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 }

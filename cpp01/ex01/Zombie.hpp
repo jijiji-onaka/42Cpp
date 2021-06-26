@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 00:06:30 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/11 12:12:00 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/06/27 04:04:07 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define ZOMBIE_HPP
 
 # include <iostream>
-#include <ctime>
+# include <ctime>
 
 # define YELLOW "\033[33m"
 # define RED "\033[38;5;196m"
@@ -36,5 +36,7 @@ class Zombie {
 		void	set_type(std::string type);
 		void		announce(void);
 };
+
+Zombie* zombieHorde(int N, std::string name);
 
 #endif

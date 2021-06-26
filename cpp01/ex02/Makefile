@@ -1,21 +1,21 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    .Makefile                                          :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/06/10 23:59:04 by tjinichi         ###   ########.fr        #
+#    Updated: 2021/06/27 01:41:53 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = memoryleak
+NAME = ref
 
 CXX = clang++
 CXXFLAGS = -g -Wall -Werror -Wextra -std=c++98
 
-SRCS =	ex01.cpp \
+SRCS =	main.cpp \
 
 OBJS = ${SRCS:.cpp=.o}
 
@@ -26,7 +26,7 @@ sanitize: CXXFLAGS += -g -fsanitize=address
 sanitize: re
 
 test: re
-	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME)
+	./$(NAME)
 
 clean:
 	rm -f $(OBJS)

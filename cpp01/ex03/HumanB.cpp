@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 22:32:20 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/13 15:37:06 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/06/27 03:48:27 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ HumanB::HumanB(const char *name)
 		std::cout << RED""BOLD << "The person cannot be NULL."RESET << std::endl;
 		std::exit(EXIT_FAILURE);
 	}
-	std::string	tmp = name;
-	this->name_ = tmp;
+	this->name_ = name;
 	this->weapon_ = NULL;
 }
 
@@ -35,5 +34,5 @@ void	HumanB::attack(void)
 		std::cout << ORANGE""BOLD << this->name_ << RESET" attack with his "
 			<< PURPLE""BOLD << this->weapon_->getType() << RESET << std::endl;
 	else
-		std::cout << RED""BOLD << this->name_ << RESET" has no weapon." << std::endl;
+		std::cout << ORANGE""BOLD << this->name_ << RESET" has no weapon." << std::endl;
 }

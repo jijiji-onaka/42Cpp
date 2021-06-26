@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/11 02:25:38 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/13 00:15:46 by tjinichi         ###   ########.fr       */
+/*   Created: 2021/06/11 12:14:36 by tjinichi          #+#    #+#             */
+/*   Updated: 2021/06/27 02:55:10 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ZombieEvent.hpp"
+#include "Zombie.hpp"
 
-void	ZombieEvent::setZombieType(std::string type)
+int	main(void)
 {
-	this->type = type;
-}
+	std::srand(std::time(NULL));
 
-Zombie	*ZombieEvent::newZombie(std::string name)
-{
-	Zombie	*ret;
+	int	rand_num = std::rand() % 10;
+	std:: cout << GREEN""BOLD"int N = "<< rand_num << RESET << std::endl;
+	std::string	names[] = {"Doraemon", "Noby", "Sue", "Sneech", "Big G", "Ace Goody"};
 
-	try
+	Zombie *zombies = zombieHorde(rand_num, names[std::rand() % 5]);
+	for (int i = 0; i < rand_num; ++i)
 	{
-		ret = new Zombie(name, this->type);
+		zombies[i].announce();
 	}
-	catch(std::bad_alloc e)
-	{
-		std::cerr << "newZombie: " << e.what() << std::endl;
-		exit(EXIT_FAILURE);
-	}
-	return ret;
+	delete []zombies;
+	return (0);
 }

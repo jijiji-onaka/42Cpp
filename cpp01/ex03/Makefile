@@ -6,18 +6,19 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/06/11 15:36:00 by tjinichi         ###   ########.fr        #
+#    Updated: 2021/06/12 21:45:26 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = identfy
+NAME = violence
 
 CXX = clang++
 CXXFLAGS = -g -Wall -Werror -Wextra -std=c++98
 
 SRCS =	main.cpp \
-		Brain.cpp \
-		Human.cpp \
+		Weapon.cpp \
+		HumanA.cpp \
+		HumanB.cpp \
 
 OBJS = ${SRCS:.cpp=.o}
 

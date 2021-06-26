@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/11 00:15:54 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/11 02:37:21 by tjinichi         ###   ########.fr       */
+/*   Created: 2021/06/27 01:53:57 by tjinichi          #+#    #+#             */
+/*   Updated: 2021/06/27 02:08:18 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIEEVENT_HPP
-# define ZOMBIEEVENT_HPP
-
 # include "Zombie.hpp"
 
-class ZombieEvent
+void	randomChump(std::string name)
 {
-	private:
-		std::string	type;
-	public:
-		void		setZombieType(std::string type);
-		Zombie		*newZombie(std::string name);
-};
+	Zombie		*randam_zombie;
 
-#endif
+	try
+	{
+		randam_zombie = new Zombie(name);
+	}
+	catch(std::bad_alloc e)
+	{
+		std::cerr << "randomChump: " << e.what() << std::endl;
+		std::exit(EXIT_FAILURE);
+	}
+	randam_zombie->announce();
+	delete randam_zombie;
+}

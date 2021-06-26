@@ -6,19 +6,17 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/06/12 21:45:26 by tjinichi         ###   ########.fr        #
+#    Updated: 2021/06/27 05:36:49 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = violence
+NAME = karenFilter
 
 CXX = clang++
 CXXFLAGS = -g -Wall -Werror -Wextra -std=c++98
 
 SRCS =	main.cpp \
-		Weapon.cpp \
-		HumanA.cpp \
-		HumanB.cpp \
+		Karen.cpp \
 
 OBJS = ${SRCS:.cpp=.o}
 
