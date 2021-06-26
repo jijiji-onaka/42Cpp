@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 21:23:06 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/10 20:27:34 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/06/27 01:13:15 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,7 @@ class Contact {
 		void		set_first_name();
 		void		set_last_name();
 		void		set_nickname();
-		void		set_login();
-		void		set_postal_address();
-		void		set_email_address();
 		void		set_phone_number();
-		void		set_birthday_date();
-		void		set_favorite_meal();
-		void		set_underwear_color();
 		void		set_darkest_secret();
 		std::string	get_first_name();
 		std::string	get_last_name();

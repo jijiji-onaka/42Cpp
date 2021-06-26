@@ -1,38 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/12 22:32:19 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/13 15:36:30 by tjinichi         ###   ########.fr       */
+/*   Created: 2021/06/13 14:21:01 by tjinichi          #+#    #+#             */
+/*   Updated: 2021/06/13 16:05:02 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_CPP
-# define HUMANB_CPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-# include "Weapon.hpp"
-
-# define YELLOW "\033[33m"
+# include <iostream>
+# include <unistd.h>
+# include <stdbool.h>
+# define GREEN "\033[38;5;112m"
 # define RED "\033[38;5;196m"
-# define ORANGE "\033[38;5;202m"
-# define GREEN "\033[38;5;34m"
+# define ORANGE "\033[38;5;203m"
 # define PURPLE "\033[38;5;105m"
+# define PINK "\033[38;5;169m"
+# define BLUE "\033[38;5;75m"
+# define YELLOW "\033[38;5;228m"
 # define DULL_GREEN "\033[38;5;58m"
 # define BOLD "\033[1m"
 # define RESET "\033[0m"
 
-class HumanB
+class Fixed
 {
 	private:
-		std::string	name_;
-		Weapon		*weapon_;
+		int			number_;
+
 	public:
-		HumanB(const char *name);
-		void		setWeapon(Weapon &weapon);
-		void		attack(void);
+		Fixed();
+		Fixed(const Fixed &copy);
+		~Fixed();
+		Fixed	&operator=(const Fixed &assign);
+		int		getRawBits(void) const;
+
 };
 
 #endif

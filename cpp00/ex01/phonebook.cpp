@@ -6,18 +6,18 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 18:29:50 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/10 21:16:12 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/06/27 01:18:14 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
-static void	check_command(std::string command, Contact contact[8], int &contact_count)
+static void	check_command(std::string command, Contact contact[8], int &contact_count, int &now_index)
 {
 	if (command == "EXIT")
 		command_EXIT();
 	else if (command == "ADD")
-		command_ADD(contact, contact_count);
+		command_ADD(contact, contact_count, now_index);
 	else if (command == "SEARCH")
 		command_SEARCH(contact, contact_count);
 	else
@@ -57,13 +57,15 @@ int	main(void)
 	std::string	command;
 	Contact		contact[CONTACT_MAX];
 	int			contact_count;
+	int			now_index;
 
 	explain_command();
 	contact_count = 0;
+	now_index = 0;
 	while (42)
 	{
 		input_command(&command);
-		check_command(command, contact, contact_count);
+		check_command(command, contact, contact_count, now_index);
 	}
 	return (0);
 }

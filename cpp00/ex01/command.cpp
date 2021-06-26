@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 23:56:32 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/10 19:23:33 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/06/27 01:21:54 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,21 @@ void	command_EXIT()
 	std::exit(EXIT_SUCCESS);
 }
 
-void	command_ADD(Contact contact[8], int &contact_count)
+void	command_ADD(Contact contact[8], int &contact_count, int &now_index)
 {
-	if (contact_count == CONTACT_MAX)
-	{
-		std::cout <<
-		BOLD""RED"You can have up to 8 contacts, and they are already filled."RESET
-		<< std::endl;
-		return ;
-	}
-	std::cout << contact_count << std::endl;
-	std::cout << "Let's create a new contact." << std::endl;
-	contact[contact_count].set_first_name();
-	contact[contact_count].set_last_name();
-	contact[contact_count].set_nickname();
-	contact[contact_count].set_login();
-	contact[contact_count].set_postal_address();
-	contact[contact_count].set_email_address();
-	contact[contact_count].set_phone_number();
-	contact[contact_count].set_birthday_date();
-	contact[contact_count].set_favorite_meal();
-	contact[contact_count].set_underwear_color();
-	contact[contact_count].set_darkest_secret();
-	++contact_count;
+	if (now_index == CONTACT_MAX)
+		now_index = 0;
+	std::cout << BOLD""BLUE"Let's create a new contact."RESET << std::endl;
+	contact[now_index].set_first_name();
+	contact[now_index].set_last_name();
+	contact[now_index].set_nickname();
+	contact[now_index].set_phone_number();
+	contact[now_index].set_darkest_secret();
+	std::cout << BOLD""BLUE"Done."RESET << std::endl;
+	explain_command();
+	if (contact_count != CONTACT_MAX)
+		++contact_count;
+	++now_index;
 }
 
 static std::string	truncate_str(std::string field)
@@ -86,6 +78,7 @@ void	command_SEARCH(Contact contact[8], int &contact_count)
 			<< std::endl;
 	}
 	contact[select_index].display_selected_field();
+	explain_command();
 }
 
 void	command_NOT_FOUND()
