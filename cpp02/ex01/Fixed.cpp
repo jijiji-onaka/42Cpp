@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 16:06:19 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/13 18:01:24 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/06/27 06:27:04 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,11 @@ int	Fixed::getRawBits(void) const
 	else
 		std::cout << YELLOW""BOLD"getRawBits member function called"RESET << std::endl;
 	return (this->number_);
+}
+
+void	Fixed::setRawBits(int const raw)
+{
+	this->number_ = raw;
 }
 
 int	Fixed::toInt(void) const

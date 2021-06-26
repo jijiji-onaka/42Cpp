@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 14:21:01 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/13 18:24:29 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/06/27 07:16:51 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,23 @@ class Fixed
 		bool	operator>=(Fixed const &fixed) const;
 		bool	operator<(Fixed const &fixed) const;
 		bool	operator>(Fixed const &fixed) const;
+		Fixed	operator+(Fixed const &fixed) const;
+		Fixed	operator-(Fixed const &fixed) const;
+		Fixed	operator*(Fixed const &fixed) const;
+		Fixed	operator/(Fixed const &fixed) const;
+		Fixed	operator++();
+		Fixed	operator++(int);
+		Fixed	operator--();
+		Fixed	operator--(int);
 
 		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
 		int		toInt(void) const;
 		float	toFloat(void) const;
+		static Fixed		&min(Fixed &a, Fixed &b);
+		static const Fixed	&min(Fixed const &a, Fixed const &b);
+		static Fixed		&max(Fixed &a, Fixed &b);
+		static const Fixed	&max(Fixed const &a, Fixed const &b);
 };
 
 std::ostream&	operator<<(std::ostream& os, const Fixed& fixed);

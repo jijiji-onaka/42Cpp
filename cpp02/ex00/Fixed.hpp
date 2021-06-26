@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 14:21:01 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/13 16:05:02 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/06/27 06:28:56 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,16 @@
 class Fixed
 {
 	private:
-		int			number_;
+		int					number_;
+		static const int	fractional_bits = 8;
 
 	public:
 		Fixed();
-		Fixed(const Fixed &copy);
 		~Fixed();
+		Fixed(const Fixed &copy);
 		Fixed	&operator=(const Fixed &assign);
 		int		getRawBits(void) const;
-
+		void	setRawBits(int const raw);
 };
 
 #endif

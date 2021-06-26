@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 14:21:01 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/13 18:01:07 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/06/27 06:26:53 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ class Fixed
 		~Fixed();
 		Fixed	&operator=(const Fixed &assign);
 		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
 		int		toInt(void) const;
 		float	toFloat(void) const;
 };
