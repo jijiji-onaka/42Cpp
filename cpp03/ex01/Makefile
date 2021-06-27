@@ -6,11 +6,11 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/06/27 19:24:52 by tjinichi         ###   ########.fr        #
+#    Updated: 2021/06/27 20:53:25 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fixed
+NAME = ClapTrap
 
 CXX = clang++
 CXXFLAGS = -g -Wall -Werror -Wextra -std=c++98
@@ -18,7 +18,9 @@ CXXFLAGS = -g -Wall -Werror -Wextra -std=c++98
 OBJDIR = ./obj/
 
 SRCS =	main.cpp \
-		Fixed.cpp \
+		ClapTrap.cpp \
+		ScavTrap.cpp \
+
 
 OBJS = $(SRCS:%.cpp=$(OBJDIR)%.o)
 
@@ -38,9 +40,6 @@ sanitize: re
 
 test: re
 	./$(NAME)
-	./$(NAME) > mine
-	diff mine .mihon
-	@rm -f mine
 
 clean:
 	rm -rf $(OBJDIR)

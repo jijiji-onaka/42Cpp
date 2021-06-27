@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 21:23:06 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/27 01:13:15 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/06/27 22:51:44 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,7 @@ class Contact {
 		std::string	first_name;
 		std::string	last_name;
 		std::string	nickname;
-		std::string	login;
-		std::string	postal_address;
-		std::string	email_address;
 		std::string	phone_number;
-		std::string	birthday_date;
-		std::string	favorite_meal;
-		std::string	underwear_color;
 		std::string	darkest_secret;
 
 	public:

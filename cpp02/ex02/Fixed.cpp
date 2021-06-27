@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/13 16:06:19 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/27 07:16:44 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/06/27 07:41:34 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,20 +159,20 @@ float	Fixed::toFloat(void) const
 
 Fixed		&Fixed::min(Fixed &a, Fixed &b)
 {
-	return (a < b ? a : b);
+	return (a <= b ? a : b);
 }
 
 const Fixed	&Fixed::min(Fixed const &a, Fixed const &b)
 {
-	return (a < b ? a : b);
+	return (a <= b ? a : b);
 }
 
 Fixed		&Fixed::max(Fixed &a, Fixed &b)
 {
-	return (a > b ? a : b);
+	return (a >= b ? a : b);
 }
 
 const Fixed	&Fixed::max(Fixed const &a, Fixed const &b)
 {
-	return (a > b ? a : b);
+	return (a >= b ? a : b);
 }
