@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 08:48:11 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/27 20:24:40 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/06/27 23:41:35 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,9 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	std::cout << " Hitpoint -> " << this->Hitpoints_ << std::endl;
 	std::cout << "    point -> " << this->points_ << std::endl;
 	std::cout << "   damege -> " << this->damege_ << std::endl;
+}
+
+std::string	ClapTrap::getName(void)
+{
+	return (this->Name_);
 }

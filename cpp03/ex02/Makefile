@@ -6,7 +6,7 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/06/27 21:37:36 by tjinichi         ###   ########.fr        #
+#    Updated: 2021/06/27 22:59:42 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ sanitize: re
 
 test: re
 	./$(NAME)
+	make fclean
 
 clean:
 	rm -rf $(OBJDIR)

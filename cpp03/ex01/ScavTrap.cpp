@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 20:14:06 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/27 21:11:04 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/06/27 23:49:56 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,5 @@ void	ScavTrap::beRepaired(unsigned int amount)
 
 void	ScavTrap::guardGate(void)
 {
-	std::cout << PINK""BOLD"[ST]" << this->Name_ << " have enterred in Gate keeper mode."RESET << std::endl;
+	std::cout << PINK""BOLD"[ST]<" << this->Name_ << "> have enterred in Gate keeper mode."RESET << std::endl;
 }

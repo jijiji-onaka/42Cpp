@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 18:29:50 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/27 01:18:14 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/06/28 00:12:36 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,11 @@ int	main(void)
 	int			contact_count;
 	int			now_index;
 
-	explain_command();
 	contact_count = 0;
 	now_index = 0;
 	while (42)
 	{
+		explain_command();
 		input_command(&command);
 		check_command(command, contact, contact_count, now_index);
 	}

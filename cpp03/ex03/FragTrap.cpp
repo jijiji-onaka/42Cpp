@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 21:22:44 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/27 21:37:00 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/06/27 23:49:53 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,5 @@ void	FragTrap::beRepaired(unsigned int amount)
 
 void	FragTrap::highFivesGuys(void)
 {
-	std::cout << PINK""BOLD"[FT]I am " << this->Name_ << ". High five, please."RESET << std::endl;
+	std::cout << PINK""BOLD"[FT]I am <" << this->Name_ << ">. High five, please."RESET << std::endl;
 }

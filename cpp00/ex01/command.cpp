@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 23:56:32 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/27 01:21:54 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/06/28 00:12:22 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	command_ADD(Contact contact[8], int &contact_count, int &now_index)
 	contact[now_index].set_phone_number();
 	contact[now_index].set_darkest_secret();
 	std::cout << BOLD""BLUE"Done."RESET << std::endl;
-	explain_command();
 	if (contact_count != CONTACT_MAX)
 		++contact_count;
 	++now_index;
@@ -78,7 +77,6 @@ void	command_SEARCH(Contact contact[8], int &contact_count)
 			<< std::endl;
 	}
 	contact[select_index].display_selected_field();
-	explain_command();
 }
 
 void	command_NOT_FOUND()
@@ -86,5 +84,4 @@ void	command_NOT_FOUND()
 	std::cout <<
 	BOLD""YELLOW"There are only three commands you can type: EXIT, ADD, and SEARCH."RESET
 	<< std::endl;
-	explain_command();
 }

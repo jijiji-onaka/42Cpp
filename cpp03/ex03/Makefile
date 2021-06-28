@@ -6,7 +6,7 @@
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/06/27 22:40:19 by tjinichi         ###   ########.fr        #
+#    Updated: 2021/06/28 00:32:42 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,10 @@ $(NAME): $(OBJS)
 
 sanitize: CXXFLAGS += -g -fsanitize=address
 sanitize: re
+	./$(NAME)
+
+leak: re
+	valgrind --leak-check=full ./$(NAME)
 
 test: re
 	./$(NAME)

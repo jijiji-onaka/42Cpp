@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 08:47:15 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/27 20:39:11 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/06/27 23:41:14 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ class ClapTrap
 		~ClapTrap(void);
 		ClapTrap(ClapTrap const &other);
 		ClapTrap &operator=(ClapTrap const &other);
+
+		std::string	getName(void);
 
 		void	attack(std::string const &target);
 		void	takeDamage(unsigned int amount);
