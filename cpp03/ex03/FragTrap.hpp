@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 21:22:45 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/27 23:19:40 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/06/28 18:18:32 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,6 @@ class FragTrap : public virtual ClapTrap
 		FragTrap(FragTrap const &other);
 		FragTrap &operator=(FragTrap const &other);
 
-		void	attack(std::string const &target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
 		void	highFivesGuys(void);
 };
 

@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 20:14:09 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/27 23:20:22 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/06/28 18:21:36 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,6 @@ class ScavTrap : public virtual ClapTrap
 		ScavTrap(ScavTrap const &other);
 		ScavTrap &operator=(ScavTrap const &other);
 
-		void	attack(std::string const &target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
 		void	guardGate(void);
 };
 

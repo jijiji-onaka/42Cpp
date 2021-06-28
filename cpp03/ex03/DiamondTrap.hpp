@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 21:43:22 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/28 18:06:16 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/06/28 18:21:22 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,6 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		DiamondTrap(DiamondTrap const &other);
 		DiamondTrap &operator=(DiamondTrap const &other);
 
-		void	attack(std::string const &target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
 		void	highFivesGuys(void);
 		void	guardGate(void);
 		void	whoAmI(void);

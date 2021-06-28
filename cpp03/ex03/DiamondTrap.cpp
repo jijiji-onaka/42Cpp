@@ -6,7 +6,7 @@
 /*   By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 21:43:23 by tjinichi          #+#    #+#             */
-/*   Updated: 2021/06/28 18:11:34 by tjinichi         ###   ########.fr       */
+/*   Updated: 2021/06/28 18:21:02 by tjinichi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,34 +73,6 @@ DiamondTrap &DiamondTrap::operator=(DiamondTrap const &other)
 		this->damege_ = other.damege_;
 	}
 	return (*this);
-}
-
-void	DiamondTrap::attack(std::string const &target)
-{
-	this->ScavTrap::attack(target);
-}
-
-void	DiamondTrap::takeDamage(unsigned int amount)
-{
-	std::cout << PURPLE""BOLD"[FT]FR4G-TP <" << this->Name_ << "> has taken <" << amount << "> damege."RESET << std::endl;
-	if (this->Hitpoints_ < amount)
-		this->Hitpoints_ = 0;
-	else
-		this->Hitpoints_ -= amount;
-	std::cout << "     Name -> " << this->Name_ << std::endl;
-	std::cout << " Hitpoint -> " << this->Hitpoints_ << std::endl;
-	std::cout << "    point -> " << this->points_ << std::endl;
-	std::cout << "   damege -> " << this->damege_ << std::endl;
-}
-
-void	DiamondTrap::beRepaired(unsigned int amount)
-{
-	this->Hitpoints_ += amount;
-	std::cout << BLUE""BOLD"[FT]FR4G-TP <" << this->Name_ << "> has repaired <" << amount << "> HP."RESET << std::endl;
-	std::cout << "     Name -> " << this->Name_ << std::endl;
-	std::cout << " Hitpoint -> " << this->Hitpoints_ << std::endl;
-	std::cout << "    point -> " << this->points_ << std::endl;
-	std::cout << "   damege -> " << this->damege_ << std::endl;
 }
 
 void	DiamondTrap::highFivesGuys(void)
