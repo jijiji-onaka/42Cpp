@@ -1,16 +1,16 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    .Makefile                                          :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: tjinichi <tjinichi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/09 14:16:52 by tjinichi          #+#    #+#              #
-#    Updated: 2021/06/29 18:00:31 by tjinichi         ###   ########.fr        #
+#    Updated: 2021/07/10 07:21:05 by tjinichi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fantasy
+NAME = Form
 
 CXX = clang++
 CXXFLAGS = -g -Wall -Werror -Wextra -std=c++98
@@ -18,11 +18,12 @@ CXXFLAGS = -g -Wall -Werror -Wextra -std=c++98
 OBJDIR = ./obj/
 
 SRCS =	main.cpp \
-		AMateria.cpp \
-		Character.cpp \
-		Cure.cpp \
-		Ice.cpp \
-		MateriaSource.cpp \
+		Bureaucrat.cpp \
+		Form.cpp \
+		Intern.cpp \
+		ShrubberyCreationForm.cpp \
+		RobotomyRequestForm.cpp \
+		PresidentialPardonForm.cpp \
 
 OBJS = $(SRCS:%.cpp=$(OBJDIR)%.o)
 
@@ -48,10 +49,10 @@ leak: re
 test: re
 	./$(NAME)
 
-diff: re
-	./$(NAME) | cat -e > mine
-	diff mine .true_output
-	@rm -f mine
+# diff: re
+# 	./$(NAME) | cat -e > mine
+# 	diff mine .true_output
+# 	@rm -f mine
 
 clean:
 	rm -rf $(OBJDIR)
